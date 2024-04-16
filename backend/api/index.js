@@ -4,7 +4,7 @@ const OpenAIController = require('./gpt-api.js')
 const apiRouter = express.Router();
 
 const API_KEY = process.env.OPENAI_API_KEY
-const MAX_TOKENS = process.env.MAX_TOKENS
+const MAX_TOKENS = parseInt(process.env.MAX_TOKENS)
 
 const gptController = new OpenAIController(API_KEY, MAX_TOKENS);
 
