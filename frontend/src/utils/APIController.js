@@ -17,8 +17,13 @@ export class APIController {
             )
             return response.data.message;
         } catch (error) {
-            const error_message = `Sorry error ${error.response.status} occured while sinding your question. ${error.response.data.message}`
-            return error_message
+            console.log(error);
+            if (error.response) {
+                const error_message = `Sorry error ${error.response.status} occured while sinding your question. ${error.response.data.message}`
+                return error_message
+            } else {
+                return `Sorry ${error.message} occured`
+            }
         }
     }
 
